@@ -5,11 +5,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.mvalho.service.DumbService;
 import com.mvalho.service.impl.DumbServiceImpl;
 
 @SpringBootApplication
+@EnableJpaRepositories
 @ComponentScan(basePackageClasses={DumbServiceImpl.class})
 public class AppConfig implements CommandLineRunner {
 	@Autowired
