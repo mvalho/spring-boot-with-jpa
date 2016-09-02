@@ -60,4 +60,15 @@ public class Contact {
 		this.person = person;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Contact [type = ");
+		stringBuilder.append(this.type);
+		stringBuilder.append(", value = ");
+		stringBuilder.append(this.value);
+		stringBuilder.append("]");
+		
+		return stringBuilder.toString();
+	}
 }

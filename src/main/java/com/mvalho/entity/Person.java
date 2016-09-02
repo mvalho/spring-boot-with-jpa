@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class Person {
 	@Temporal(TemporalType.DATE)
 	private Calendar dateOfBirth;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="person")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="person", fetch = FetchType.EAGER) //Just be more convenient.
 	private List<Contact> contacts;
 	
 	public Person() {}
@@ -63,4 +64,17 @@ public class Person {
 		this.contacts = contacts;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Person [name = ");
+		stringBuilder.append(this.name);
+		stringBuilder.append(", date of birth = ");
+		stringBuilder.append(this.dateOfBirth.getTime());
+		stringBuilder.append(", Contacts [");
+		this.contacts.stream().forEach(c -> stringBuilder.append(c.toString()));
+		stringBuilder.append("]");
+		
+		return stringBuilder.toString();
+	}
 }

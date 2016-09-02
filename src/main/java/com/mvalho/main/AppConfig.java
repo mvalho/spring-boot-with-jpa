@@ -42,6 +42,10 @@ public class AppConfig implements CommandLineRunner {
 		phone.setPerson(person);
 		
 		personRepository.saveAndFlush(person);
+		
+		Person savedPerson = personRepository.findOne(1L);
+		
+		System.out.println(savedPerson.toString());
 	}
 
 }
