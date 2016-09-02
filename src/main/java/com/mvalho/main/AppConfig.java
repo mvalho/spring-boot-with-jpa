@@ -13,9 +13,9 @@ import com.mvalho.repository.PersonRepository;
 import com.mvalho.service.impl.DumbServiceImpl;
 
 @SpringBootApplication
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackageClasses = PersonRepository.class)
 @EntityScan(basePackageClasses = Person.class)
-@ComponentScan(basePackageClasses={DumbServiceImpl.class, PersonRepository.class})
+@ComponentScan(basePackageClasses={DumbServiceImpl.class})
 public class AppConfig implements CommandLineRunner {
 	@Autowired
 	private PersonRepository personRepository;
