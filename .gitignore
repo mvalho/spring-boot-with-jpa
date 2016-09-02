@@ -2,3 +2,8 @@
 .classpath
 .project
 .settings/
+
+*.lck
+spring-boot-jpa.log
+spring-boot-jpa.properties
+spring-boot-jpa.script
