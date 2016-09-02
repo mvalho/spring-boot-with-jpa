@@ -67,7 +67,9 @@ public class Person {
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("Person [name = ");
+		stringBuilder.append("Person [id = ");
+		stringBuilder.append(this.id);
+		stringBuilder.append(", name = ");
 		stringBuilder.append(this.name);
 		stringBuilder.append(", date of birth = ");
 		stringBuilder.append(this.dateOfBirth.getTime());

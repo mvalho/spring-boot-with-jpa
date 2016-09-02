@@ -67,7 +67,7 @@ public class Contact {
 		stringBuilder.append(this.type);
 		stringBuilder.append(", value = ");
 		stringBuilder.append(this.value);
-		stringBuilder.append("]");
+		stringBuilder.append("] ");
 		
 		return stringBuilder.toString();
 	}

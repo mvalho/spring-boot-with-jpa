@@ -45,7 +45,7 @@ public class AppConfig implements CommandLineRunner {
 		
 		Person savedPerson = personRepository.findOne(1L);
 		
-		System.out.println(savedPerson.toString());
+		System.out.println("------> " + savedPerson.toString());
 	}
 
 }
