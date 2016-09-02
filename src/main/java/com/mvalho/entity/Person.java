@@ -1,5 +1,6 @@
 package com.mvalho.entity;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -28,6 +29,14 @@ public class Person {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="person")
 	private List<Contact> contacts;
+	
+	public Person() {}
+	
+	public Person(String name, Calendar dateOfBirth, Contact ... contacts) {
+		this.name = name;
+		this.dateOfBirth = dateOfBirth;
+		this.contacts = Arrays.asList(contacts);
+	}
 	
 	public Long getId() {
 		return id;

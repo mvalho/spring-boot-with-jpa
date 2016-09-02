@@ -26,6 +26,13 @@ public class Contact {
 	@JoinColumn(name="person_id", nullable=false)
 	private Person person;
 	
+	public Contact() {}
+	
+	public Contact(ContactType type, String value) {
+		this.type = type;
+		this.value = value;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -43,6 +50,14 @@ public class Contact {
 	}
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 	
 }
